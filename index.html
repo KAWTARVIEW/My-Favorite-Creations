@@ -1,128 +1,594 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
-    }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
-    }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
-    }
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    footer p {
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Creations LLC | Handcrafted Artisanal Goods & Custom Gifts</title>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+    <style>
+        /* Artisanal Warm Palette */
+        :root {
+            --bg-cream: #faf7f2;
+            --card-white: #ffffff;
+            --mahogany-dark: #2c1a11;
+            --amber-primary: #d97706;
+            --amber-light: #fef3c7;
+            --terracotta: #c2410c;
+            --text-dark: #1f1917;
+            --text-muted: #6b5e57;
+            --border-soft: #e7dfd8;
+            --font-family: 'Georgia', 'Inter', serif, system-ui;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Announcement Header */
+        .top-notice {
+            background: var(--mahogany-dark);
+            color: #f3ebd9;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            padding: 0.65rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .top-notice div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Main Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 1.25rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--mahogany-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .brand-logo i {
+            color: var(--amber-primary);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--amber-primary);
+        }
+
+        .btn-craft {
+            background: var(--amber-primary);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+        }
+
+        .btn-craft:hover {
+            background: var(--terracotta);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            padding: 5rem 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--amber-light);
+            color: var(--amber-primary);
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            font-family: sans-serif;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            color: var(--mahogany-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-text h1 span {
+            color: var(--amber-primary);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(44, 26, 17, 0.12);
+        }
+
+        /* Showcase Grid */
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 5rem auto 3rem auto;
+        }
+
+        .section-header span {
+            color: var(--amber-primary);
+            font-family: sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--mahogany-dark);
+            margin-top: 0.5rem;
+        }
+
+        .creations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .creation-card {
+            background: var(--card-white);
+            border: 1px solid var(--border-soft);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .creation-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(44, 26, 17, 0.08);
+            border-color: var(--amber-primary);
+        }
+
+        .creation-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .creation-body {
+            padding: 1.75rem;
+        }
+
+        .creation-body h3 {
+            font-size: 1.3rem;
+            color: var(--mahogany-dark);
+            margin-bottom: 0.6rem;
+        }
+
+        .creation-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-family: sans-serif;
+        }
+
+        /* Custom Order Banner */
+        .custom-banner {
+            background: var(--mahogany-dark);
+            color: #ffffff;
+            border-radius: 24px;
+            padding: 4rem;
+            margin: 6rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .custom-banner img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .custom-banner-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #fef3c7;
+        }
+
+        .custom-banner-text p {
+            color: #d1c7bd;
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            background: var(--card-white);
+            border: 1px solid var(--border-soft);
+            border-radius: 24px;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .contact-details h2 {
+            font-size: 2.2rem;
+            color: var(--mahogany-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-family: sans-serif;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--amber-primary);
+            background: var(--amber-light);
+            padding: 0.85rem;
+            border-radius: 12px;
+        }
+
+        .contact-item span {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+
+        .contact-item strong {
+            font-size: 1.05rem;
+            color: var(--mahogany-dark);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            font-family: sans-serif;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            background: var(--bg-cream);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 1rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--amber-primary);
+            background: #ffffff;
+        }
+
+        .btn-submit {
+            background: var(--mahogany-dark);
+            color: #ffffff;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: var(--amber-primary);
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 26, 17, 0.75);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            font-family: sans-serif;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-body {
+            background: #ffffff;
+            border-radius: 20px;
+            max-width: 650px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .modal-body h3 {
+            color: var(--mahogany-dark);
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--mahogany-dark);
+        }
+
+        footer {
+            background: var(--mahogany-dark);
+            color: #a8988d;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            font-family: sans-serif;
+        }
+
+        footer a {
+            color: #fef3c7;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            #hero, .custom-banner, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
-  </header>
-
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
-  </div>
-
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
-
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+    <div class="top-notice">
+        <div><i data-lucide="sparkles" size="16"></i> Handcrafted Artisan Designs & Custom Wooden Goods</div>
+        <div>Braselton, Georgia Studio[cite: 15]</div>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
-  </section>
+    <header>
+        <div class="brand-logo">
+            <i data-lucide="palette"></i> My Favorite Creations
+        </div>
+        <nav>
+            <a href="#about">About Studio</a>
+            <a href="#creations">Creations</a>
+            <a href="#custom">Custom Works</a>
+            <a href="#contact" class="btn-craft">Order Custom Work</a>
+        </nav>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
-  </footer>
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="about">
+            <div id="hero">
+                <div class="hero-text">
+                    <span class="hero-tag">Handcrafted In Georgia</span>
+                    <h1>Artisan Woodcraft & <span>Bespoke Creations</span></h1>
+                    <p>My Favorite Creations LLC creates unique, hand-built wood and resin home decor, custom keepsake boxes, and handcrafted gifts tailored to celebrate life's moments[cite: 15].</p>
+                    <a href="#contact" class="btn-craft" style="padding: 1rem 2rem; display: inline-block;">Request Custom Creation</a>
+                </div>
 
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Woodworking artisan crafting handcrafted home decor">
+                </div>
+            </div>
+        </section>
+
+        <!-- Creations Gallery -->
+        <section id="creations">
+            <div class="section-header">
+                <span>Featured Collection</span>
+                <h2>Handmade With Passion</h2>
+            </div>
+
+            <div class="creations-grid">
+                <div class="creation-card">
+                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Handcrafted wooden journal and keepsake box">
+                    <div class="creation-body">
+                        <h3>Handcrafted Wooden Keepsakes</h3>
+                        <p>Beautifully finished hardwood boxes and bookends crafted using reclaimed oak, poplar, and hand-rubbed wax finishes.</p>
+                    </div>
+                </div>
+
+                <div class="creation-card">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" alt="Artisan resin and wooden coasters on table">
+                    <div class="creation-body">
+                        <h3>Epoxy & Wood Tableware</h3>
+                        <p>Custom river coasters, cutting boards, and decorative serving trays combining natural live-edge wood with crystal clear resin.</p>
+                    </div>
+                </div>
+
+                <div class="creation-card">
+                    <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Bespoke artisan home decor wall piece">
+                    <div class="creation-body">
+                        <h3>Bespoke Wall Decor</h3>
+                        <p>Original wood burned art, antique piece transfers, and customized plaques made to complement modern and rustic interiors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Order Callout -->
+        <section id="custom" class="custom-banner">
+            <div class="custom-banner-text">
+                <h3>Have a Specific Design in Mind?</h3>
+                <p>From personalized engraved gifts to custom furniture accents, we collaborate directly with clients to turn ideas into tangible, lasting heirlooms.</p>
+                <a href="#contact" class="btn-craft" style="background: #ffffff; color: var(--mahogany-dark);">Start Your Design</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Artisan workshop with crafted wooden elements">
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-wrapper">
+            <div class="contact-details">
+                <h2>Contact Our Studio</h2>
+                <p>Send us a message with your project idea or custom order request[cite: 15]. We look forward to creating something special for you.</p>
+
+                <div class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <span>Email Us</span>
+                        <strong>contact@myfavoritecreations.org</strong>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <span>Call Studio</span>
+                        <strong>+1 447 442 3190</strong>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <span>Studio Location</span>
+                        <strong>2065 Summerglen Trl, Braselton, GA 30517 United States[cite: 15]</strong>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault();">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea rows="4" placeholder="Describe your custom creation or project details..." required></textarea>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal-overlay">
+        <div class="modal-body">
+            <button class="modal-close" onclick="toggleModal()"><i data-lucide="x" size="24"></i></button>
+            <h3>Privacy Policy</h3>
+            <br>
+            <p><strong>1. Information Collection:</strong> My Favorite Creations LLC collects contact details submitted via contact forms strictly for processing custom work orders and customer communications[cite: 15].</p>
+            <br>
+            <p><strong>2. Information Protection:</strong> We respect your privacy and do not sell or share customer data with third parties.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; MY FAVORITE CREATIONS LLC. All rights reserved. Braselton, Georgia[cite: 15].</p>
+            <p style="margin-top: 0.5rem;"><a onclick="toggleModal()">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleModal() {
+            document.getElementById('privacy-modal').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
